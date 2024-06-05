@@ -29,7 +29,7 @@
                 <th scope="col" class="px-6 py-3">Action</th>
             </tr>
         </thead>
-        {{-- <tbody>
+        <tbody>
             @if($product->count() > 0)
             @foreach($product as $rs)
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
@@ -37,22 +37,40 @@
                     {{ $loop->iteration }}
                 </th>
                 <td>
-                    {{ $rs->title }}
+                    {{ $rs->nama_kendaraan }}
                 </td>
                 <td>
-                    {{ $rs->price }}
+                    {{ $rs->foto_kendaraan }}
+                </td>
+                <td>
+                    {{ $rs->merek_kendaraan }}
+                </td>
+                <td>
+                    {{ $rs->jenis_kendaraan }}
+                </td>
+                <td>
+                    {{ $rs->kapasitas_mesin }}
+                </td>
+                <td>
+                    {{ $rs->tahun_produksi }}
+                </td>
+                <td>
+                    {{ $rs->no_polisi }}
+                </td>
+                <td>
+                    {{ $rs->no_mesin }}
                 </td>
                 <td>
                     {{ $rs->product_code }}
                 </td>
                 <td>
-                    {{ $rs->description }}
+                    {{ $rs->deskripsi_kendaraan }}
                 </td>
                 <td class="w-36">
                     <div class="h-14 pt-5">
-                        <a href="{{ route('admin/products/show', $rs->id) }}" class="text-blue-800">Detail</a> |
-                        <a href="{{ route('admin/products/edit', $rs->id)}}" class="text-green-800 pl-2">Edit</a> |
-                        <form action="{{ route('admin/products/destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Delete?')" class="float-right text-red-800">
+                        {{-- <a href="{{ route('admin/products/show', $rs->id) }}" class="text-blue-800">Detail</a> | --}}
+                        {{-- <a href="{{ route('admin/products/edit', $rs->id)}}" class="text-green-800 pl-2">Edit</a> | --}}
+                        {{-- <form action="{{ route('admin/products/destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Delete?')" class="float-right text-red-800"> --}}
                             @csrf
                             @method('DELETE')
                             <button>Delete</button>
@@ -66,7 +84,7 @@
                 <td class="text-center" colspan="5">Product not found</td>
             </tr>
             @endif
-        </tbody> --}}
+        </tbody>
     </table>
 </div>
 @endsection
