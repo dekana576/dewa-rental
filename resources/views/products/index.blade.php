@@ -20,7 +20,12 @@
                 <th scope="col" class="px-6 py-3">Nama</th>
                 <th scope="col" class="px-6 py-3">Foto</th>
                 <th scope="col" class="px-6 py-3">Merek</thee>
-                <th scope="col" class="px-6 py-3">Description</th>
+                <th scope="col" class="px-6 py-3">jenis</thee>
+                <th scope="col" class="px-6 py-3">kapasitas mesin</thee>
+                <th scope="col" class="px-6 py-3">tahun produksi</thee>
+                <th scope="col" class="px-6 py-3">no polisi</thee>
+                <th scope="col" class="px-6 py-3">no mesin</thee>
+                <th scope="col" class="px-6 py-3">deskripsi</th>
                 <th scope="col" class="px-6 py-3">Action</th>
             </tr>
         </thead>
