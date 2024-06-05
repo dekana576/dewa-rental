@@ -13,11 +13,19 @@ class HomeController extends Controller
  
     public function index()
     {
-        return view('home');
+        return view('frontend.homepage');
     }
  
     public function adminHome()
     {
         return view('dashboard');
     }
+
+    public function detail()
+    {
+        return view('frontend.detail');
+    }
+    
+
+    
 }
