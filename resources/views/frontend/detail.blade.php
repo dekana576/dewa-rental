@@ -17,7 +17,7 @@
             <!-- Product image-->
             <img
               class="card-img-top"
-              src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+              src="https://th.bing.com/th/id/OIP.ZiGHBCCevnEW80k3MjwZwAHaEs?rs=1&pid=ImgDetMain"
               alt="..."
             />
             <!-- Product details-->
