@@ -64,7 +64,7 @@
                     {{ $rs->deskripsi_kendaraan }}
                 </td>
                 <td class="w-36">
-                    <div class="h-14 pt-5">
+                    <div class="py-3">
                         <a href="" class="text-blue-800">Detail</a> |
                         <a href="" class="text-green-800 pl-2">Edit</a> |
                         <form action="" method="POST" onsubmit="return confirm('Delete?')" class="float-right text-red-800">
