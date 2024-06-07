@@ -5,7 +5,9 @@
 @section('contents')
 <div>
     <h1 class="font-bold text-2xl ml-3">Home Product List</h1>
-    <a href="{{ route('admin/products/create') }}" class="text-white float-right bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Add Product</a>
+    <div class="d-flex justify-content-end">
+        <a href="{{ route('admin/products/create') }}" class="btn btn-primary">Add Product</a>
+    </div>
     <hr />
     @if(Session::has('success'))
     <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
@@ -65,9 +67,9 @@
                 </td>
                 <td class="w-36">
                     <div class="py-3">
-                        <a href="" class="text-blue-800">Detail</a> |
-                        <a href="" class="text-green-800 pl-2">Edit</a> |
-                        <form action="" method="POST" onsubmit="return confirm('Delete?')" class="float-right text-red-800">
+                        <a href="{{ route('admin/products/show', $rs->id) }}" class="text-blue-800">Detail</a> |
+                        <a href="{{ route('admin/products/edit', $rs->id) }}" class="text-green-800 pl-2">Edit</a> |
+                        <form action="{{ route('admin/products/destroy', $rs->id) }}" method="POST" onsubmit="return confirm('Delete?')" class="float-right text-red-800">
                             @csrf
                             @method('DELETE')
                             <button>Delete</button>

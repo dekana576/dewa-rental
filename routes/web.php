@@ -44,9 +44,14 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
     Route::get('/admin/products/create', [ProductController::class, 'create'])->name('admin/products/create');
     Route::post('/admin/products/store', [ProductController::class, 'store'])->name('admin/products/store');
+    Route::get('/admin/products/show/{id}', [ProductController::class, 'show'])->name('admin/products/show');
+    Route::get('/admin/products/edit/{id}', [ProductController::class, 'edit'])->name('admin/products/edit');
+    Route::put('/admin/products/edit/{id}', [ProductController::class, 'update'])->name('admin/products/update');
+    Route::delete('/admin/products/destroy/{id}', [ProductController::class, 'destroy'])->name('admin/products/destroy');
 });
 
 
 Route::get('/homepage', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('/contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
+
