@@ -42,6 +42,9 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ route('history') }}">History</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('logout') }}">logout</a>
+        </li>
       </ul>
       <!-- </div> -->
     </div>
@@ -51,7 +54,7 @@
   @yield('content')
   <!-- Footer-->
   <footer class="bg-gray-100 dark:bg-cyan-600">
-    <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl px-4 py-5 sm:px-6 lg:px-8">
       <div class="flex justify-center text-teal-600 dark:text-white">
         <H1>Dewa Rental Bali</H1>
       </div>
