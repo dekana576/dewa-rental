@@ -10,7 +10,7 @@
         <div class="row">
             <div class="sm:col-span-4">
                 <div class="mt-2">
-                    <img src="{{ asset('/storage/products/'.$product->foto_kendaraan) }}" class="rounded" style="width: 150px">
+                    <img src="{{ asset('/storage/products/'.$product->foto_kendaraan) }}" class="rounded" style="width: 300px">
                 </div>
             </div>
             <div class="col-6">
