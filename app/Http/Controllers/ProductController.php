@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -30,7 +32,35 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+
+        $request->validate([
+            'nama_kendaraan'  => 'required',
+            'foto_kendaraan'  => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'merek_kendaraan'   => 'required',
+            'jenis_kendaraan'         => 'required',
+            'kapasitas_mesin'         => 'required',
+            'tahun_produksi'         => 'required',
+            'no_polisi'         => 'required',
+            'no_mesin'         => 'required',
+            'deskripsi_kendaraan'         => 'required',
+        ]);
+
+        //upload image
+        $image = $request->file('foto_kendaraan');
+        $image->storeAs('public/products', $image->hashName());
+
+        //create product
+        Product::create([
+            'nama_kendaraan'         => $request->nama_kendaraan,
+            'foto_kendaraan'         => $image->hashName(),
+            'merek_kendaraan'         => $request->merek_kendaraan,
+            'jenis_kendaraan'   => $request->jenis_kendaraan,
+            'kapasitas_mesin'         => $request->kapasitas_mesin,
+            'tahun_produksi'         => $request->tahun_produksi,
+            'no_polisi'         => $request->no_polisi,
+            'no_mesin'         => $request->no_mesin,
+            'deskripsi_kendaraan'         => $request->deskripsi_kendaraan,
+        ]);
 
         return redirect()->route('admin/products')->with('success', 'Product Added Successfully');
     }
@@ -58,13 +88,66 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id): RedirectResponse
     {
-        $product = Product::FindOrFail($id);
+        // dd($request->all());
 
-        $product->update($request->all());
+        $request->validate([
+            'nama_kendaraan'  => 'required',
+            'foto_kendaraan'  => 'image|mimes:jpeg,jpg,png|max:2048',
+            'merek_kendaraan' => 'required',
+            'jenis_kendaraan' => 'required',
+            'kapasitas_mesin' => 'required',
+            'tahun_produksi'  => 'required',
+            'no_polisi'       => 'required',
+            'no_mesin'        => 'required',
+            'deskripsi_kendaraan' => 'required',
+        ]);
+        
+        $product = Product::findOrFail($id);
+        
+        if ($request->hasFile('foto_kendaraan')) {
+        
+            //upload new image
+            $image = $request->file('foto_kendaraan');
+            $image->storeAs('public/products', $image->hashName());
+        
+            //delete old image
+            Storage::delete('public/products/' . $product->foto_kendaraan);
+        
+            //update product with new image
+            $product->update([
+                'nama_kendaraan'     => $request->nama_kendaraan,
+                'foto_kendaraan'     => $image->hashName(),
+                'merek_kendaraan'    => $request->merek_kendaraan,
+                'jenis_kendaraan'    => $request->jenis_kendaraan,
+                'kapasitas_mesin'    => $request->kapasitas_mesin,
+                'tahun_produksi'     => $request->tahun_produksi,
+                'no_polisi'          => $request->no_polisi,
+                'no_mesin'           => $request->no_mesin,
+                'deskripsi_kendaraan'=> $request->deskripsi_kendaraan,
+            ]);
+        
+        } else {
+        
+            //update product without image
+            $product->update([
+                'nama_kendaraan'     => $request->nama_kendaraan,
+                'merek_kendaraan'    => $request->merek_kendaraan,
+                'jenis_kendaraan'    => $request->jenis_kendaraan,
+                'kapasitas_mesin'    => $request->kapasitas_mesin,
+                'tahun_produksi'     => $request->tahun_produksi,
+                'no_polisi'          => $request->no_polisi,
+                'no_mesin'           => $request->no_mesin,
+                'deskripsi_kendaraan'=> $request->deskripsi_kendaraan,
+            ]);
+        }
 
-        return redirect()->route('admin/products')->with('success', 'Product Update Successfull');
+       
+        
+        return redirect()->route('admin/products')->with('success', 'Product Update Successful');
+
+        
     }
 
     /**
@@ -74,6 +157,7 @@ class ProductController extends Controller
     {
         $product = Product::FindOrFail($id);
 
+        Storage::delete('public/products/'.$product->foto_kendaraan);
         $product->delete();
 
         return redirect()->route('admin/products')->with('success', 'Product Deleted Successfull');

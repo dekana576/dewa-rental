@@ -26,8 +26,6 @@
                 <th scope="col" class="pe-3 py-3"> kapasitas mesin</th>
                 <th scope="col" class="pe-3 py-3"> tahun produksi</th>
                 <th scope="col" class="pe-3 py-3"> no polisi</th>
-                <th scope="col" class="pe-3 py-3"> no mesin</th>
-                <th scope="col" class="pe-3 py-3"> deskripsi</th>
                 <th scope="col" class="pe-3 py-3"> Action</th>
             </tr>
         </thead>
@@ -41,8 +39,8 @@
                 <td>
                     {{ $rs->nama_kendaraan }}
                 </td>
-                <td>
-                    {{ $rs->foto_kendaraan }}
+                <td class="text-center">
+                    <img src="{{ asset('/storage/products/'.$rs->foto_kendaraan) }}" class="rounded" style="width: 150px">
                 </td>
                 <td>
                     {{ $rs->merek_kendaraan }}
@@ -58,12 +56,6 @@
                 </td>
                 <td>
                     {{ $rs->no_polisi }}
-                </td>
-                <td>
-                    {{ $rs->no_mesin }}
-                </td>
-                <td>
-                    {{ $rs->deskripsi_kendaraan }}
                 </td>
                 <td class="w-36">
                     <div class="py-3">

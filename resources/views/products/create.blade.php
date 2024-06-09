@@ -20,7 +20,7 @@
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Foto</label>
                         <div class="mt-2">
-                            <input type="text" name="foto_kendaraan" id="foto_kendaraan" class="form-control">
+                            <input type="file" name="foto_kendaraan" id="foto_kendaraan" class="form-control">
                         </div>
                     </div>
                     <div class="sm:col-span-4">
