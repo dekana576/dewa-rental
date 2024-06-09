@@ -19,10 +19,10 @@
                         </div>
                     </div>
                     @error('nama_kendaraan')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Foto</label>
                         <div class="mt-2">
@@ -30,10 +30,10 @@
                         </div>
                     </div>
                     @error('foto_kendaraan')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Merek</label>
                         <div class="mt-2">
@@ -41,10 +41,10 @@
                         </div>
                     </div>
                     @error('merek_kendaraan')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Jenis</label>
                         <div class="mt-2">
@@ -52,10 +52,10 @@
                         </div>
                     </div>
                     @error('jenis_kendaraan')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Kapasitas Mesin</label>
                         <div class="mt-2">
@@ -63,10 +63,10 @@
                         </div>
                     </div>
                     @error('kapasitas_mesin')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="col-6">
                     <div class="sm:col-span-4">
@@ -76,10 +76,10 @@
                         </div>
                     </div>
                     @error('tahun_produksi')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
          
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">No Polisi</label>
@@ -88,10 +88,10 @@
                         </div>
                     </div>
                     @error('no_polisi')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">No Mesin</label>
                         <div class="mt-2">
@@ -99,10 +99,21 @@
                         </div>
                     </div>
                     @error('no_mesin')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <div class="sm:col-span-4">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Harga</label>
+                        <div class="mt-2">
+                            <input id="harga_sewa" name="harga_sewa" type="number" class="form-control" value="{{ $product->harga_sewa }}">
+                        </div>
+                    </div>
+                    @error('harga_sewa')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                     <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Description</label>
                         <div class="mt-2">
@@ -110,12 +121,12 @@
                         </div>
                     </div>
                     @error('deskripsi_kendaraan')
-                                    <div class="alert alert-danger mt-2">
-                                        {{ $message }}
-                                    </div>
-                                @enderror
-                    <button type="submit" class="flex w-full justify-center mt-10 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Submit</button>
-                </div>
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    </div>
+                <button type="submit" class="flex w-full justify-center mt-10 rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-4">Submit</button>
             </div>
             
             

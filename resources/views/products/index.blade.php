@@ -22,10 +22,11 @@
                 <th scope="col" class="pe-3 py-3"> Nama</th>
                 <th scope="col" class="pe-3 py-3"> Foto</th>
                 <th scope="col" class="pe-3 py-3"> Merek</th>
-                <th scope="col" class="pe-3 py-3"> jenis</th>
-                <th scope="col" class="pe-3 py-3"> kapasitas mesin</th>
-                <th scope="col" class="pe-3 py-3"> tahun produksi</th>
-                <th scope="col" class="pe-3 py-3"> no polisi</th>
+                <th scope="col" class="pe-3 py-3"> Jenis</th>
+                <th scope="col" class="pe-3 py-3"> Kapasitas Mesin</th>
+                <th scope="col" class="pe-3 py-3"> Tahun Produksi</th>
+                <th scope="col" class="pe-3 py-3"> No Polisi</th>
+                <th scope="col" class="pe-3 py-3"> Harga</th>
                 <th scope="col" class="pe-3 py-3"> Action</th>
             </tr>
         </thead>
@@ -56,6 +57,9 @@
                 </td>
                 <td>
                     {{ $rs->no_polisi }}
+                </td>
+                <td>
+                    {{ "Rp " . number_format($rs->harga_sewa,2,',','.') }}
                 </td>
                 <td class="w-36">
                     <div class="py-3">

@@ -60,6 +60,12 @@
                     </div>
                 </div>
                 <div class="sm:col-span-4">
+                    <label class=""><strong>Harga Sewa</strong></label>
+                    <div class="mb-2">
+                        {{ "Rp " . number_format($product->harga_sewa,2,',','.') }}
+                    </div>
+                </div>
+                <div class="sm:col-span-4">
                     <label class=""><strong>Deskripsi</strong></label>
                     <div class="mb-2">
                         {{ $product->deskripsi_kendaraan }}

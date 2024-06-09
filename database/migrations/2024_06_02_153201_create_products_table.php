@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('tahun_produksi');
             $table->string('no_polisi');
             $table->string('no_mesin');
+            $table->integer('harga_sewa');
             $table->longText('deskripsi_kendaraan');
             $table->timestamps();
         });

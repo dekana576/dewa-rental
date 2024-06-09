@@ -18,6 +18,7 @@ class Product extends Model
         'tahun_produksi',
         'no_polisi',
         'no_mesin',
+        'harga_sewa',
         'deskripsi_kendaraan',
     ];
 }
