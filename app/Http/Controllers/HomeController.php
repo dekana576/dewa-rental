@@ -31,4 +31,13 @@ class HomeController extends Controller
         return view('frontend.contact');
     }
     
+    public function about()
+    {
+        return view('frontend.about');
+    }
+    
+    public function history()
+    {
+        return view('frontend.history');
+    }
 }

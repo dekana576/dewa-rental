@@ -55,3 +55,5 @@ Route::get('/homepage', [\App\Http\Controllers\HomeController::class, 'index'])-
 Route::get('/contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
 Route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
 
+Route::get('/about', [\App\Http\Controllers\HomeController::class, 'about'])->name('about');
+Route::get('/history', [\App\Http\Controllers\HomeController::class, 'history'])->name('history');

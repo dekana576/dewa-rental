@@ -28,17 +28,24 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="{{ route('homepage') }}">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('contact') }}">Contact</a>
-          </li>
-        </ul>
-      </div>
+      <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent"> -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ route('homepage') }}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('about') }}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('contact') }}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('history') }}">History</a>
+        </li>
+      </ul>
+      <!-- </div> -->
     </div>
+
   </nav>
   <!-- Header-->
   @yield('content')
@@ -46,29 +53,30 @@
   <footer class="bg-gray-100 dark:bg-cyan-600">
     <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="flex justify-center text-teal-600 dark:text-white">
-       <H1>Dewa Rental Bali</H1>
+        <H1>Dewa Rental Bali</H1>
       </div>
 
       <p class="mx-auto mt-6 max-w-md text-center leading-relaxed text-white dark:text-gray-400">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt consequuntur amet culpa cum
-        itaque neque.
+        2024 Dewa Rental Bali. Thank you for choosing us!
+        Call us at +62 361 1234567 or drop an email at info@dewarentalbali.com
       </p>
 
       <ul class="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
         <li>
-          <a class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75" href="#">
+          <a class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75"
+            href="{{ route('about') }}">
             About
           </a>
         </li>
 
         <li>
-          <a class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75" href="#">
-            Careers
+          <a class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75" href="{{ route('contact') }}">
+            Contact
           </a>
         </li>
 
         <li>
-          <a class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75" href="#">
+          <a class="text-gray-700 transition hover:text-gray-700/75 dark:text-white dark:hover:text-white/75" href="{{ route('history') }}">
             History
           </a>
         </li>

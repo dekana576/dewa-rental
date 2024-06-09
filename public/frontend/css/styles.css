@@ -11657,9 +11657,9 @@ fieldset:disabled .btn {
   }
 }
 
-.outer-header{
+/* .outer-header{
   background: #6095b4;
-}
+} */
 
 .outer-searchbar{
   height: 3rem;
@@ -11741,4 +11741,8 @@ fieldset:disabled .btn {
   .filter-option:hover {
     background-color: #f5f5dc; /* Light beige */
   }
+}
+
+.sidebbar{
+  z-index: 100;
 }
