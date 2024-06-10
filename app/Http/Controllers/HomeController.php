@@ -48,4 +48,11 @@ class HomeController extends Controller
     {
         return view('frontend.orderdetail');
     }
+
+    public function show(String $id)
+    {
+        $product = Product::findOrFail($id);
+
+        return view('frontend.detail', compact('product'));
+    }
 }

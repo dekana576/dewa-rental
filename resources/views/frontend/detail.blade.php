@@ -16,8 +16,8 @@
           <div class="card h-100">
             <!-- Product image-->
             <img
-              class="card-img-top"
-              src="https://th.bing.com/th/id/OIP.ZiGHBCCevnEW80k3MjwZwAHaEs?rs=1&pid=ImgDetMain"
+              class="card-img-top" style="width: 600px"
+              src="{{ asset('/storage/products/'.$product->foto_kendaraan) }}"
               alt="..."
             />
             <!-- Product details-->
@@ -26,10 +26,7 @@
                 <!-- Product name-->
                 <h3 class="fw-bolder text-primary">Deskripsi</h3>
                 <p>
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Ipsa dolor corrupti porro, sit ex nemo itaque, est
-                  voluptatum illum dignissimos facilis alias facere rem
-                  consequatur?
+                  {{$product->deskripsi_kendaraan}}
                 </p>
                 <div class="mobil-info-list border-top pt-4">
                   <ul class="list-unstyled">
@@ -64,31 +61,51 @@
                 <div
                   class="d-flex justify-content-between align-items-center"
                 >
-                  <h5 class="fw-bolder">Special Item</h5>
+                  <h5 class="fw-bolder">Harga</h5>
                   <div class="rent-price mb-3">
                     <span style="font-size: 1rem" class="text-primary"
-                      >Rp.200.000/</span
+                      >{{ "Rp " . number_format($product->harga_sewa,2,',','.') }}/</span
                     >day
                   </div>
                 </div>
                 <ul class="list-unstyled list-style-group">
                   <li
-                    class="border-bottom p-2 d-flex justify-content-between"
-                  >
-                    <span>Bahan Bakar</span>
-                    <span style="font-weight: 600">Bensin</span>
+                    class="border-bottom p-2 d-flex justify-content-between">
+                    <span>Nama</span>
+                    <span style="font-weight: 600">{{$product->nama_kendaraan}}</span>
+                  </li>
+                  <li
+                    class="border-bottom p-2 d-flex justify-content-between">
+                    <span>Merek</span>
+                    <span style="font-weight: 600">{{$product->merek_kendaraan}}</span>
+                  </li>
+                  <li
+                    class="border-bottom p-2 d-flex justify-content-between">
+                    <span>Tahun Produksi</span>
+                    <span style="font-weight: 600">{{$product->tahun_produksi}}</span>
+                  </li>
+                  <li
+                    class="border-bottom p-2 d-flex justify-content-between">
+                    <span>Kapasitas Mesin</span>
+                    <span style="font-weight: 600">{{$product->kapasitas_mesin}}</span>
                   </li>
                   <li
                     class="border-bottom p-2 d-flex justify-content-between"
                   >
                     <span>Jumlah Kursi</span>
-                    <span style="font-weight: 600">5</span>
+                    <span style="font-weight: 600">{{$product->jumlah_kursi}}</span>
                   </li>
                   <li
                     class="border-bottom p-2 d-flex justify-content-between"
                   >
                     <span>Transmisi</span>
-                    <span style="font-weight: 600">Manual</span>
+                    <span style="font-weight: 600">{{$product->jenis_kendaraan}}</span>
+                  </li>
+                  <li
+                    class="border-bottom p-2 d-flex justify-content-between"
+                  >
+                    <span>Status</span>
+                    <span style="font-weight: 600; background-color: orange; color:white">{{$product->status}}</span>
                   </li>
                 </ul>
               </div>

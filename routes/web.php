@@ -53,7 +53,7 @@ Route::middleware(['auth', 'user-access:admin'])->group(function () {
 
 Route::get('/homepage', [\App\Http\Controllers\HomeController::class, 'index'])->name('homepage');
 Route::get('/contact', [\App\Http\Controllers\HomeController::class, 'contact'])->name('contact');
-Route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->name('detail');
+Route::get('/detail/{id}', [\App\Http\Controllers\HomeController::class, 'show'])->name('detail');
 
 Route::get('/about', [\App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/history', [\App\Http\Controllers\HomeController::class, 'history'])->name('history');

@@ -106,7 +106,7 @@
             <div class="card-footer border-top-0 bg-transparent">
               <div class="text-center">
                 <a class="btn btn-primary mt-auto" href="{{ route('sewa') }}">Sewa</a>
-                <a class="btn btn-info mt-auto text-white" href="{{ route('detail') }}">Detail</a>
+                <a class="btn btn-info mt-auto text-white" href="{{ route('detail', $rs->id) }}">Detail</a>
               </div>
             </div>
           </div>
