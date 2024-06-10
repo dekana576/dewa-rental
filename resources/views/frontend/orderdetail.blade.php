@@ -1,189 +1,136 @@
-
-
-
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pemesanan Rental</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Order Detail - Dewa Rental Bali</title>
   <style>
     body {
-      backgroun
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
     }
 
     .container {
-      display: flex;
-      gap: 20px;
-      background-color: #f5f5f5;
+      max-width: 800px;
+      margin: 40px auto;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .card {
-      flex: 1;
       background-color: #fff;
+      border: 1px solid #ddd;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .order-detail {
       padding: 20px;
-      border-radius: 10px;
     }
 
-    .card h2 {
-      margin-bottom: 10px;
+    .order-detail h2 {
+      margin-top: 0;
+      font-weight: bold;
+      color: #333;
     }
 
-    .card .circle {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #6c757d;
-      margin: 0 auto;
-      margin-bottom: 10px;
-    }
-
-    .card .data-pemesanan {
-      margin-bottom: 20px;
-    }
-
-    .card .data-pemesanan input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .card .syarat-pemesanan {
-      display: flex;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .card .syarat-pemesanan button {
-      background-color: #6c757d;
-      color: #fff;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      z-index: 10;
-      display: none;
-    }
-
-    .modal-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .modal-header h3 {
+    .order-detail ul {
+      list-style: none;
+      padding: 0;
       margin: 0;
     }
 
-    .modal-header .close {
-      cursor: pointer;
+    .order-detail li {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
     }
 
-    .modal-body {
-      margin-bottom: 20px;
+    .order-detail li:last-child {
+      border-bottom: none;
     }
 
-    .modal-body label {
-      display: block;
-      margin-bottom: 5px;
+    .order-detail .label {
+      font-weight: bold;
+      margin-right: 10px;
+      color: #666;
     }
 
-    .modal-body input[type="checkbox"] {
-      margin-right: 5px;
+    .order-detail .value {
+      font-size: 16px;
+      color: #333;
     }
 
-    .modal-footer {
-      text-align: center;
-    }
-
-    .modal-footer button {
-      background-color: #6c757d;
+    .order-detail .button {
+      background-color: #337ab7;
       color: #fff;
-      padding: 10px 20px;
       border: none;
-      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .order-detail .button:hover {
+      background-color: #23527c;
     }
   </style>
 </head>
-
 <body>
-  <div class="container dark:bg-cyan-600">
-    <div class="card">
-      <h2>Pemesanan Anda</h2>
-      <div class="circle"></div>
-      <div class="data-pemesanan">
-        <input type="text" placeholder="Nama Lengkap">
-        <input type="text" placeholder="No. Handphone">
-        <input type="email" placeholder="Email">
-      </div>
-      <div class="syarat-pemesanan">
-        <button>Syarat Pemesanan</button>
-      </div>
-    </div>
-   
-
-  <div class="modal" id="modalSyarat">
-    <div class="modal-header">
-      <h3>Syarat Rental</h3>
-      <span class="close" onclick="closeModal()">&times;</span>
-    </div>
-    <div class="modal-body">
-      <label>
-        <input type="checkbox"> Pilih Semua
-      </label>
-      <label>
-        <input type="checkbox"> e-KTP/paspor
-        <small>Pergonal harus menlampirkan penyalin foto e-KTP/paspor menua</small>
-      </label>
-      <label>
-        <input type="checkbox"> SIM
-        <small>Pergonal harus menlampirkan penyalin foto SIM menua</small>
-      </label>
-    </div>
-    <div class="modal-footer">
-      <button onclick="closeModal()">Simpan</button>
+  <div class="container">
+    <div class="order-detail">
+      <h2>Order Detail</h2>
+      <ul>
+        <li>
+          <span class="label">Order ID:</span>
+          <span class="value">#1234</span>
+          <button class="edit-btn">Edit</button>
+        </li>
+        <li>
+          <span class="label">Car Model:</span>
+          <span class="value">Toyota Avanza</span>
+          <button class="edit-btn">Edit</button>
+        </li>
+        <li>
+          <span class="label">Rental Period:</span>
+          <span class="value">2024-06-10 - 2024-06-15</span>
+          <button class="edit-btn">Edit</button>
+        </li>
+        <li>
+          <span class="label">Pickup Location:</span>
+          <span class="value">Soekarno-Hatta International Airport</span>
+          <button class="edit-btn">Edit</button>
+        </li>
+        <li>
+          <span class="label">Drop-off Location:</span>
+          <span class="value">Gambir Station</span>
+          <button class="edit-btn">Edit</button>
+        </li>
+        <li>
+          <span class="label">Total Price:</span>
+          <span class="value">Rp 2,500,000</span>
+        </li>
+        <li>
+          <span class="label">Payment Method:</span>
+          <span class="value">Credit Card</span>
+        </li>
+        <li>
+          <span class="label">Payment Status:</span>
+          <span class="value">Paid</span>
+        </li>
+      </ul>
+      <button class="button" id="print-invoice-btn">Print Invoice</button>
     </div>
   </div>
 
   <script>
-    function openModal() {
-      document.getElementById("modalSyarat").style.display = "block";
-    }
+    // Add event listener to the "Print Invoice" button
+    document.getElementById("print-invoice-btn").addEventListener("click", function() {
+      // Print the invoice
+      window.print();
+    });
 
-    function closeModal() {
-      document.getElementById("modalSyarat").style.display = "none";
-    }
-
-    document.querySelectorAll(".syarat-pemesanan button").forEach(button => {
-      button.addEventListener("click", openModal);
+    // Add event listener to the edit buttons
+    document.querySelectorAll(".edit-btn").forEach(button => {
+      button.addEventListener("click", function() {
+        // Toggle the edit mode for the corresponding list item
+        this.parentNode.classList.toggle("edit-mode");
+      });
     });
   </script>
-    
 </body>
 </html>
