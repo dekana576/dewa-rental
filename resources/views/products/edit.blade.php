@@ -67,6 +67,18 @@
                             {{ $message }}
                         </div>
                     @enderror
+                    <div class="sm:col-span-4">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Status</label>
+                        <select name="status" id="status" class="form-select">
+                            <option value="Tersedia">Tersedia</option>
+                            <option value="Tidak Tersedia">Tidak Tersedia</option>
+                        </select>
+                    </div>
+                    @error('status')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
                 <div class="col-6">
                     <div class="sm:col-span-4">
@@ -99,6 +111,17 @@
                         </div>
                     </div>
                     @error('no_mesin')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <div class="sm:col-span-4">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Jumlah Kursi</label>
+                        <div class="mt-2">
+                            <input id="jumlah_kursi" name="jumlah_kursi" type="text" class="form-control" value="{{ $product->jumlah_kursi }}">
+                        </div>
+                    </div>
+                    @error('jumlah_kursi')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>

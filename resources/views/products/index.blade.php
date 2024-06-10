@@ -26,7 +26,9 @@
                 <th scope="col" class="pe-3 py-3"> Kapasitas Mesin</th>
                 <th scope="col" class="pe-3 py-3"> Tahun Produksi</th>
                 <th scope="col" class="pe-3 py-3"> No Polisi</th>
+                <th scope="col" class="pe-3 py-3"> Jumlah Kursi</th>
                 <th scope="col" class="pe-3 py-3"> Harga</th>
+                <th scope="col" class="pe-3 py-3"> Status</th>
                 <th scope="col" class="pe-3 py-3"> Action</th>
             </tr>
         </thead>
@@ -40,7 +42,7 @@
                 <td>
                     {{ $rs->nama_kendaraan }}
                 </td>
-                <td class="text-center">
+                <td class="text-center pb-2">
                     <img src="{{ asset('/storage/products/'.$rs->foto_kendaraan) }}" class="rounded" style="width: 150px">
                 </td>
                 <td>
@@ -59,7 +61,13 @@
                     {{ $rs->no_polisi }}
                 </td>
                 <td>
+                    {{ $rs->jumlah_kursi }}
+                </td>
+                <td>
                     {{ "Rp " . number_format($rs->harga_sewa,2,',','.') }}
+                </td>
+                <td>
+                    {{ $rs->status }}
                 </td>
                 <td class="w-36">
                     <div class="py-3">

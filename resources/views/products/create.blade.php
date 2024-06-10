@@ -103,6 +103,17 @@
                         </div>
                     @enderror
                     <div class="sm:col-span-4">
+                        <label class="block text-sm font-medium leading-6 text-gray-900">Jumlah Kursi</label>
+                        <div class="mt-2">
+                            <input id="jumlah_kursi" name="jumlah_kursi" type="number" class="form-control">
+                        </div>
+                    </div>
+                    @error('jumlah_kursi')
+                        <div class="alert alert-danger mt-2">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <div class="sm:col-span-4">
                         <label class="block text-sm font-medium leading-6 text-gray-900">Harga</label>
                         <div class="mt-2">
                             <input id="harga_sewa" name="harga_sewa" type="number" class="form-control">

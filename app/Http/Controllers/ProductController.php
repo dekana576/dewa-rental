@@ -42,6 +42,7 @@ class ProductController extends Controller
             'tahun_produksi'         => 'required',
             'no_polisi'         => 'required',
             'no_mesin'         => 'required',
+            'jumlah_kursi'         => 'required',
             'harga_sewa'         => 'required',
             'deskripsi_kendaraan'         => 'required',
         ]);
@@ -60,6 +61,7 @@ class ProductController extends Controller
             'tahun_produksi'         => $request->tahun_produksi,
             'no_polisi'         => $request->no_polisi,
             'no_mesin'         => $request->no_mesin,
+            'jumlah_kursi'         => $request->jumlah_kursi,
             'harga_sewa'         => $request->harga_sewa,
             'deskripsi_kendaraan'         => $request->deskripsi_kendaraan,
         ]);
@@ -103,7 +105,9 @@ class ProductController extends Controller
             'tahun_produksi'  => 'required',
             'no_polisi'       => 'required',
             'no_mesin'        => 'required',
+            'jumlah_kursi'        => 'required',
             'harga_sewa'        => 'required',
+            'status'        => 'required',
             'deskripsi_kendaraan' => 'required',
         ]);
         
@@ -128,7 +132,9 @@ class ProductController extends Controller
                 'tahun_produksi'     => $request->tahun_produksi,
                 'no_polisi'          => $request->no_polisi,
                 'no_mesin'           => $request->no_mesin,
+                'jumlah_kursi'           => $request->jumlah_kursi,
                 'harga_sewa'           => $request->harga_sewa,
+                'status'           => $request->status,
                 'deskripsi_kendaraan'=> $request->deskripsi_kendaraan,
             ]);
         
@@ -143,7 +149,9 @@ class ProductController extends Controller
                 'tahun_produksi'     => $request->tahun_produksi,
                 'no_polisi'          => $request->no_polisi,
                 'no_mesin'           => $request->no_mesin,
+                'jumlah_kursi'           => $request->jumlah_kursi,
                 'harga_sewa'           => $request->harga_sewa,
+                'status'           => $request->status,
                 'deskripsi_kendaraan'=> $request->deskripsi_kendaraan,
             ]);
         }
