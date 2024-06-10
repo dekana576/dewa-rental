@@ -57,3 +57,4 @@ Route::get('/detail', [\App\Http\Controllers\HomeController::class, 'detail'])->
 
 Route::get('/about', [\App\Http\Controllers\HomeController::class, 'about'])->name('about');
 Route::get('/history', [\App\Http\Controllers\HomeController::class, 'history'])->name('history');
+Route::get('/sewa', [\App\Http\Controllers\HomeController::class, 'sewa'])->name('sewa');

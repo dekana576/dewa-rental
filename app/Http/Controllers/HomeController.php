@@ -43,4 +43,9 @@ class HomeController extends Controller
     {
         return view('frontend.history');
     }
+
+    public function sewa()
+    {
+        return view('frontend.orderdetail');
+    }
 }
